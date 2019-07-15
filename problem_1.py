@@ -7,12 +7,17 @@ Bonus: Can you do this in one pass?
 '''
 
 
-def check(list, result):
+def check(list_num, result):
+    # create a set to store the possible solutions
     possible_solutions = set()
-    for num in list:
+    # go through the list which is given.
+    for num in list_num:
+        # if the number appears in the set it means it is a possible solution
         if num in possible_solutions:
             return True
+        # from the number we are checking we will make the new possible solution.
         possible_solutions.add(result - num)
+    # if there is nothing after going through the list we will return false as it is not possible to make the sum.
     return False
 
 
